@@ -1,9 +1,9 @@
 // Accept a POST request to the route “/test”, which accepts one argument “string_to_cut”
 // Return a JSON object with the key “return_string” and a string containing every third letter from the original string
-// (e.g.) If you POST {"string_to_cut": "iamyourlyftdriver"}, it will return: {"return_string": "muydv"}.
+// (e.g.) If you POST {"string_to_cut": "iamyourlyftdriver"}, it will return: {"return_string": "muydv"}
 
 const express = require('express'); // Bring in express
-const router = express.Router();
+const router = express.Router(); // Create new router object
 
 router.post('/', (req, res) => {
     const { string_to_cut } = req.body; // Deconstruct req.body to access string_to_cut
