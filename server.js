@@ -1,14 +1,13 @@
-const express = require('express');
-const app = express();
-app.use(express.json({ extended: false }))
+const express = require('express'); // Bring in express
+const app = express(); // Create express application and initialize it to 'app'
+app.use(express.json({ extended: false })) // Returns middleware that only parses json and only looks at requests where the Content-Type header matches the type option.
 
-const PORT = process.env.PORT || 5000;
+const PORT = 5000;
 
+// use /test route to accept a POST request 
 app.use('/test', require('./routes/test'))
 
+// Listen on port 5000
 app.listen(PORT, (req, res) => {
     console.log(`Listening on ${PORT}`)
 } )
-
-// Accept a POST request to the route “/test”, which accepts one argument “string_to_cut”
-// Return a JSON object with the key “return_string” and a string containing every third letter from the original string
