@@ -8,6 +8,7 @@ const router = express.Router();
 router.post('/', (req, res) => {
     const { string_to_cut } = req.body;
     let finalString = ''
+    let returnVal = {}
 
     for (let i = 0; i < string_to_cut.length; i++) {
         if((i + 1) % 3 === 0){
@@ -15,7 +16,7 @@ router.post('/', (req, res) => {
         }
     }
 
-    res.json(finalString);
+    res.json({"return_string": finalString});
 })
 
 module.exports = router;
